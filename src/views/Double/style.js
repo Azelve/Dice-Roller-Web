@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  /*Customization panel*/
   .custom {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: calc(20% + 250px);
-  }
-  .custom > * {
-    margin: 10px;
   }
   .custom > button {
     font-size: 20px;
@@ -24,7 +20,7 @@ export const Container = styled.div`
     border-radius: 10px;
     outline: none;
     cursor: pointer;
-    transition: 0.6s ease;
+    transition: 0.4s ease;
   }
 
   .custom > button:hover {

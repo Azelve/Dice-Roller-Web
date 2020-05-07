@@ -44,6 +44,23 @@ export const Drawer = styled.div`
     li a:hover {
       background-color: #c00;
     }
+
+    li .active a {
+      display: flex;
+      width: 200px;
+      height: 80px;
+      color: #cc0000;
+      border-radius: 40px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #000000;
+    }
+
+    li .active a:hover {
+      background-color: #cc0000;
+      color: #000000;
+    }
   }
 
   a {
@@ -52,7 +69,7 @@ export const Drawer = styled.div`
     font-weight: bold;
   }
 
-  div {
+  #copy-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,7 +80,7 @@ export const Drawer = styled.div`
     margin-bottom: 30px;
   }
 
-  div a {
+  #copy-box a {
     font-size: 20px;
     color: #000000;
     transition: 0.4s ease;
@@ -71,7 +88,7 @@ export const Drawer = styled.div`
     font-family: Verdana;
   }
 
-  div a:hover {
+  #copy-box a:hover {
     color: #c00;
     font-size: 22px;
   }

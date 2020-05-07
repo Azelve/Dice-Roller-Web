@@ -1,5 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  NavLink,
+  Route,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
+
 import diceImg from "../assets/images/dice.png";
 import doubleImg from "../assets/images/double-dice.png";
 import numberImg from "../assets/images/number.png";
@@ -13,20 +22,32 @@ const routes = [
   {
     path: "/",
     exact: true,
-    sidebar: () => <div>Dice!</div>,
     main: Dice,
   },
   {
     path: "/double-dice",
-    sidebar: () => <div>Double!</div>,
+    exact: true,
     main: Double,
   },
   {
     path: "/number-generator",
-    sidebar: () => <div>Number Generator!</div>,
+    exact: true,
     main: Generator,
   },
 ];
+
+function Gonna({ label, to, active }) {
+  let match = useRouteMatch({
+    path: to,
+    exact: active,
+  });
+
+  return (
+    <div className={match ? "active" : ""}>
+      <Link to={to}>{label}</Link>
+    </div>
+  );
+}
 
 const Routes = () => {
   return (
@@ -36,7 +57,8 @@ const Routes = () => {
           <ul>
             <li>
               <img src={diceImg} alt="Dice" height="130px" width="130px" />
-              <Link to="/">Dice</Link>
+              <Gonna to="/" label="Dice" active={true} />
+              {/* <Link to="/">Dice</Link> */}
             </li>
             <li>
               <img
@@ -45,7 +67,9 @@ const Routes = () => {
                 height="120px"
                 width="120px"
               />
-              <Link to="/double-dice">Double Dice</Link>
+              <Gonna to="/double-dice" label="Double Dice" active={true} />
+
+              {/* <Link to="/double-dice">Double Dice</Link> */}
             </li>
             <li>
               <img
@@ -54,15 +78,19 @@ const Routes = () => {
                 height="90px"
                 width="90px"
               />
-              <Link to="/number-generator">
-                Number
-                <br />
-                Generator
-              </Link>
+              <Gonna
+                to="/number-generator"
+                label="Number Generator"
+                active={true}
+              />
             </li>
           </ul>
-          <div>
-            <a href="https://www.instagram.com/espelhoinvertido" target="blank">
+          <div id="copy-box">
+            <a
+              href="https://www.instagram.com/espelhoinvertido"
+              target="blank"
+              id="copyright"
+            >
               &copy; Espelho Invertido
             </a>
           </div>

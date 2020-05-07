@@ -3,23 +3,29 @@ import styled from "styled-components";
 export const Container = styled.div`
   .custom {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-top: calc(20% + 250px);
   }
 
   .custom > button {
     font-size: 20px;
-    font-family: Verdana;
+    font-family: "Verdana";
     width: 200px;
     height: 50px;
-    color: gold;
-    background-color: black;
+    font-weight: bold;
+    color: #c00;
+    background-color: #000;
     border: none;
     border-radius: 10px;
     outline: none;
     cursor: pointer;
-    font-weight: bold;
+    transition: 0.4s ease;
+  }
+
+  .custom > button:hover {
+    background-color: #c00;
+    color: #000;
   }
 `;
 
