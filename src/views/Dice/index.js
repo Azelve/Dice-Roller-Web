@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import $ from "jquery";
-import "./App.css";
+import { Container, Panel, Dice, Icon } from "./style";
 
-const App = () => {
-  let [diceColor, setDiceColor] = useState("#000000");
-  let [dotColor, setDotColor] = useState("#ffd700");
-  let rnd;
-  let x, y;
+import dark from "../../assets/images/dark.png";
+import red from "../../assets/images/red.png";
 
-  // $("#dice-color").val("#000000");
-  // $("#dot-color").val("#ffd700");
+const DiceRoller = () => {
+  const [diceColor, setDiceColor] = useState("#CC0000");
+  const [dotColor, setDotColor] = useState("#000000");
+  const [rotateX, setRotateX] = useState(45);
+  const [rotateY, setRotateY] = useState(30);
 
   const Roll = (e) => {
     e.preventDefault();
-    rnd = Math.floor(Math.random() * 6 + 1);
-    console.log(rnd);
+    let x, y;
+    const rnd = Math.floor(Math.random() * 6 + 1);
+    console.log(diceColor);
+    console.log(dotColor);
     switch (rnd) {
       case 1:
         y = 720;
@@ -30,47 +31,32 @@ const App = () => {
         break;
     }
 
-    document.documentElement.style.setProperty("--x", x + "deg");
-    document.documentElement.style.setProperty("--y", y + "deg");
+    setRotateX(x);
+    setRotateY(y);
   };
 
-  // $("#spin").click(function (e) {
-  //   e.preventDefault();
-  //   rnd = Math.floor(Math.random() * 6 + 1);
-  //   console.log(rnd);
-  //   switch (rnd) {
-  //     case 1:
-  //       y = 720;
-  //       x = 810;
-  //       break;
-  //     case 6:
-  //       y = 720;
-  //       x = 990;
-  //       break;
-  //     default:
-  //       y = 720 + (6 - rnd) * 90;
-  //       x = 900;
-  //       break;
-  //   }
-  //   $(".dice").css(
-  //     "transform",
-  //     "translateZ(-100px) rotateY(" + y + "deg) rotateX(" + x + "deg)"
-  //   );
-  // });
+  const ChangeDark = () => {
+    setDiceColor("#000000");
+    setDotColor("#CC0000");
+  };
 
-  // $("#dot-color").change(function () {
-  //   const dot = $("#dot-color").val();
-  //   $(".dot").css("background-color", dot);
-  // });
-  // $("#dice-color").change(function () {
-  //   const dice = $("#dice-color").val();
-  //   $(".side").css("background-color", dice);
-  // });
+  const ChangeRed = () => {
+    setDiceColor("#CC0000");
+    setDotColor("#000000");
+  };
 
   return (
-    <div className="App">
-      <div className="panel">
-        <div className="dice">
+    <Container>
+      <span>
+        <Icon onClick={ChangeDark}>
+          <img src={dark} alt="Dark Mode" height={100} width={100} />
+        </Icon>
+        <Icon onClick={ChangeRed}>
+          <img src={red} alt="Blood Mode" height={100} width={100} />
+        </Icon>
+      </span>
+      <Panel dotColor={dotColor} diceColor={diceColor}>
+        <Dice rotateY={rotateY} rotateX={rotateX}>
           <div className="side one">
             <span className="dot"></span>
           </div>
@@ -120,32 +106,16 @@ const App = () => {
               <span className="dot"></span>
             </div>
           </div>
-        </div>
-      </div>
+        </Dice>
+      </Panel>
 
       <div className="custom">
-        <h2>Dice Color</h2>
-        <input
-          className="picker"
-          id="dice-color"
-          type="color"
-          defaultValue={diceColor}
-          onChange={setDiceColor}
-        />
-        <h2>Dot Color</h2>
-        <input
-          className="picker"
-          id="dot-color"
-          type="color"
-          defaultValue={dotColor}
-          onChange={setDotColor}
-        />
         <button id="spin" onClick={Roll}>
-          Spin random!!!
+          Spin dice
         </button>
       </div>
-    </div>
+    </Container>
   );
 };
 
-export default App;
+export default DiceRoller;
