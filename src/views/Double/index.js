@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Container, Panel, Dice } from "./style";
+import { Container, Panel, Dice, Button } from "./style";
 
 const DiceRoller = () => {
-  const diceColor = "#C00";
-  const dotColor = "#000";
-  const diceColor2 = "#000";
-  const dotColor2 = "#C00";
+  const diceColor = "#000";
+  const dotColor = "#C00";
+  const diceColor2 = "#C00";
+  const dotColor2 = "#000";
   const [rotateX, setRotateX] = useState(200);
-  const [rotateY, setRotateY] = useState(125);
+  const [rotateY, setRotateY] = useState(135);
   const [rotateX2, setRotateX2] = useState(45);
   const [rotateY2, setRotateY2] = useState(45);
 
@@ -177,9 +177,7 @@ const DiceRoller = () => {
       </Panel>
 
       <div className="custom">
-        <button id="spin" onClick={Roll}>
-          Spin dices
-        </button>
+        <Button onClick={Roll}>Spin dice</Button>
       </div>
     </Container>
   );

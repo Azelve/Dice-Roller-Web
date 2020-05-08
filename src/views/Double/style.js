@@ -7,25 +7,41 @@ export const Container = styled.div`
     align-items: center;
     margin-top: calc(20% + 250px);
   }
-  .custom > button {
-    font-size: 20px;
-    font-family: "Verdana";
-    width: 200px;
-    height: 50px;
-    font-weight: bold;
-    margin-top: 104px;
-    color: #c00;
-    background-color: #000;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    transition: 0.4s ease;
+`;
+
+export const Button = styled.a`
+  display: flex;
+  align-items: center;
+  transition: all 0.4s;
+  -webkit-transition: all 0.1s;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 40px;
+  margin: 104px 10px 10px 0px;
+  float: left;
+  border-radius: 3px;
+  font-family: Verdana, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #cc0000;
+  text-decoration: none;
+  background-color: #a6a6a6;
+  border-bottom: 5px solid #737373;
+  text-shadow: 1px -1px #cc0000;
+
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
   }
 
-  .custom > button:hover {
-    background-color: #c00;
-    color: #000;
+  &:hover {
+    color: #000000;
+    text-decoration: none;
+    background-color: #ec635b;
+    border-bottom: 5px solid #ce3a47;
+    text-shadow: 1px -1px #000000;
   }
 `;
 
