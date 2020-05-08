@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Panel, Dice, Icon } from "./style";
+import { Container, Panel, Dice, Icon, Button } from "./style";
 
 import dark from "../../assets/images/dark.png";
 import red from "../../assets/images/red.png";
@@ -7,6 +7,9 @@ import red from "../../assets/images/red.png";
 const DiceRoller = () => {
   const [diceColor, setDiceColor] = useState("#CC0000");
   const [dotColor, setDotColor] = useState("#000000");
+  const [buttonColor, setButtonColor] = useState("#a6a6a6");
+  const [buttonShadow, setButtonShadow] = useState("#737373");
+  const [buttonTextColor, setButtonTextColor] = useState("#CC0000");
   const [rotateX, setRotateX] = useState(45);
   const [rotateY, setRotateY] = useState(30);
 
@@ -38,11 +41,17 @@ const DiceRoller = () => {
   const ChangeDark = () => {
     setDiceColor("#000000");
     setDotColor("#CC0000");
+    setButtonColor("#ec635b");
+    setButtonShadow("#ce3a47");
+    setButtonTextColor("#000000");
   };
 
   const ChangeRed = () => {
     setDiceColor("#CC0000");
     setDotColor("#000000");
+    setButtonColor("#a6a6a6");
+    setButtonShadow("#737373");
+    setButtonTextColor("#CC0000");
   };
 
   return (
@@ -110,9 +119,14 @@ const DiceRoller = () => {
       </Panel>
 
       <div className="custom">
-        <button id="spin" onClick={Roll}>
+        <Button
+          onClick={Roll}
+          buttonColor={buttonColor}
+          buttonShadow={buttonShadow}
+          buttonTextColor={buttonTextColor}
+        >
           Spin dice
-        </button>
+        </Button>
       </div>
     </Container>
   );

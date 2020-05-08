@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+// font-size: 20px;
+//     font-family: "Verdana";
+//     width: 200px;
+//     height: 50px;
+//     font-weight: bold;
+//     color: #c00;
+//     background-color: #000;
+//     border: none;
+//     border-radius: 10px;
+//     outline: none;
+//     cursor: pointer;
+//     transition: 0.4s ease;
+
 export const Container = styled.div`
   .custom {
     display: flex;
@@ -7,27 +20,36 @@ export const Container = styled.div`
     align-items: center;
     margin-top: calc(20% + 250px);
   }
+`;
 
-  .custom > button {
-    font-size: 20px;
-    font-family: "Verdana";
-    width: 200px;
-    height: 50px;
-    font-weight: bold;
-    color: #c00;
-    background-color: #000;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    transition: 0.4s ease;
-  }
+export const Button = styled.a`
+  display: flex;
+  align-items: center;
+  transition: all 0.4s;
+  -webkit-transition: all 0.1s;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 3px;
+  font-family: Verdana, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: ${(props) => props.buttonTextColor};
+  text-decoration: none;
+  background-color: ${(props) => props.buttonColor};
+  border-bottom: 5px solid ${(props) => props.buttonShadow};
+  text-shadow: 1px -1px ${(props) => props.buttonTextColor};
 
-  .custom > button:hover {
-    background-color: #c00;
-    color: #000;
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
   }
 `;
+// #e74c3c #c0392b #c0392b
 
 export const Icon = styled.button`
   padding: 0;
