@@ -96,6 +96,6 @@ export const Drawer = styled.div`
 
 export const SPA = styled.div`
   flex: 1;
-  padding: 15px;
+  padding: 0px;
   background-color: #30343b;
 `;

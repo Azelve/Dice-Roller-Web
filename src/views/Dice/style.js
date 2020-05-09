@@ -1,19 +1,7 @@
 import styled from "styled-components";
 
-// font-size: 20px;
-//     font-family: "Verdana";
-//     width: 200px;
-//     height: 50px;
-//     font-weight: bold;
-//     color: #c00;
-//     background-color: #000;
-//     border: none;
-//     border-radius: 10px;
-//     outline: none;
-//     cursor: pointer;
-//     transition: 0.4s ease;
-
 export const Container = styled.div`
+  height: 100vh;
   .custom {
     display: flex;
     justify-content: center;
@@ -58,7 +46,7 @@ export const Icon = styled.button`
   border-radius: 50%;
   border: none;
   background-color: transparent;
-  margin: 0 20px;
+  margin: 20px 20px;
 `;
 
 export const Panel = styled.div`

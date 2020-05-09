@@ -58,7 +58,6 @@ const Routes = () => {
             <li>
               <img src={diceImg} alt="Dice" height="130px" width="130px" />
               <Gonna to="/" label="Dice" active={true} />
-              {/* <Link to="/">Dice</Link> */}
             </li>
             <li>
               <img
@@ -68,8 +67,6 @@ const Routes = () => {
                 width="120px"
               />
               <Gonna to="/double-dice" label="Double Dice" active={true} />
-
-              {/* <Link to="/double-dice">Double Dice</Link> */}
             </li>
             <li>
               <img

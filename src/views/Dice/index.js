@@ -9,7 +9,7 @@ const DiceRoller = () => {
   const [dotColor, setDotColor] = useState("#000000");
   const [buttonColor, setButtonColor] = useState("#a6a6a6");
   const [buttonShadow, setButtonShadow] = useState("#737373");
-  const [buttonTextColor, setButtonTextColor] = useState("#CC0000");
+  const [buttonTextColor, setButtonTextColor] = useState("#ce3a47");
   const [rotateX, setRotateX] = useState(45);
   const [rotateY, setRotateY] = useState(30);
 
@@ -51,7 +51,7 @@ const DiceRoller = () => {
     setDotColor("#000000");
     setButtonColor("#a6a6a6");
     setButtonShadow("#737373");
-    setButtonTextColor("#CC0000");
+    setButtonTextColor("#ce3a47");
   };
 
   return (

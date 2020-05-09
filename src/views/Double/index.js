@@ -20,8 +20,6 @@ const DiceRoller = () => {
     e.preventDefault();
     let x, y;
     const rnd = Math.floor(Math.random() * 6 + 1);
-    console.log(diceColor);
-    console.log(dotColor);
     switch (rnd) {
       case 1:
         y = 720;
@@ -45,8 +43,6 @@ const DiceRoller = () => {
     e.preventDefault();
     let x, y;
     const rnd = Math.floor(Math.random() * 6 + 1);
-    console.log(diceColor);
-    console.log(dotColor);
     switch (rnd) {
       case 1:
         y = 720;

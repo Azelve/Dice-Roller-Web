@@ -18,17 +18,17 @@ export const Button = styled.a`
   cursor: pointer;
   position: relative;
   padding: 10px 40px;
-  margin: 104px 10px 10px 0px;
+  margin: 143px 10px 10px 0px;
   float: left;
   border-radius: 3px;
   font-family: Verdana, sans-serif;
   font-size: 22px;
   font-weight: bold;
-  color: #cc0000;
+  color: #ce3a47;
   text-decoration: none;
   background-color: #a6a6a6;
   border-bottom: 5px solid #737373;
-  text-shadow: 1px -1px #cc0000;
+  text-shadow: 1px -1px #ce3a47;
 
   &:active {
     transform: translate(0px, 5px);
