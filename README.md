@@ -1,9 +1,9 @@
 <h1 align="center">
 <br>
-  Dice Roller & Number Generator
+  Dice Roller & Number Generator - Mobile
 </h1>
 
-<p align="center">Desktop application to convert binary number to decimal number.</p>
+<p align="center">Mobile application to generate random numbers with a dice or specific values.</p>
 
 <p align="center">
  <a href="#-features">Features</a> •
